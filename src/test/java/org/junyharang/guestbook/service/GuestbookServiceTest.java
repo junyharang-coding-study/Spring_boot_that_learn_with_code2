@@ -51,4 +51,30 @@ import static org.junit.jupiter.api.Assertions.*;
 
     } // testList() 끝
 
+    @Test public void testSearch() {
+
+        PageRequestDTO pageRequestDTO = PageRequestDTO.builder()
+                .page(1)
+                .size(10)
+                .type("titlecontent")
+                .keyword("한글")          // 검색 Keyword
+                .build();
+
+        PageResponseDTO<GuestbookDTO, Guestbook> resultDTO = service.getList(pageRequestDTO);
+
+        System.out.println("이전 : " + resultDTO.isPrev());
+        System.out.println("다음 : " + resultDTO.isNext());
+        System.out.println("통합 : " + resultDTO.getTotalPage());
+
+        System.out.println("-------------------------------------------------------------------");
+
+        for (GuestbookDTO guestbookDTO : resultDTO.getDtoList()) {
+            System.out.println(guestbookDTO);
+        } // for 문 끝
+
+        System.out.println("====================================================================");
+        resultDTO.getPageList().forEach(integer -> System.out.println(integer));
+
+    } //testSearch() 끝
+
 } // class 끝

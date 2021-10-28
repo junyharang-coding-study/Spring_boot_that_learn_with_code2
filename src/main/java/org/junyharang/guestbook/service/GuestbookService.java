@@ -31,10 +31,16 @@ public interface GuestbookService {
                 .content(entity.getContent())
                 .writer(entity.getWriter())
                 .regDate(entity.getRegDate())
-                .modeDate(entity.getModDate())
+                .modDate(entity.getModDate())
                 .build();
 
         return dto;
 
     } // entityToDTO() 끝
+
+    GuestbookDTO read(Long writingNo);
+
+    void modify(GuestbookDTO dto);
+
+    void remove(Long writingNo);
 } // interface 끝
