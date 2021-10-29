@@ -63,6 +63,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
         service.modify(dto);
 
         redirectAttributes.addFlashAttribute("page", requestDTO.getPage());
+        redirectAttributes.addFlashAttribute("type", requestDTO.getType());
+        redirectAttributes.addFlashAttribute("keyword", requestDTO.getKeyword());
+
         redirectAttributes.addFlashAttribute("writingNo", dto.getWritingNo());
 
         return "redirect:/guestbook/read";

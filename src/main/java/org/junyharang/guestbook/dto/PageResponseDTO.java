@@ -1,5 +1,6 @@
 package org.junyharang.guestbook.dto;
 
+import lombok.Data;
 import lombok.Getter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,7 +10,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-@Getter public class PageResponseDTO<DTO, ENTITY> {
+@Data public class PageResponseDTO<DTO, ENTITY> {
 
     //DTO List
     private List<DTO> dtoList;

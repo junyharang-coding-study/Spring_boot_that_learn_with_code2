@@ -47,7 +47,7 @@
 
                 <tr th:each="dto : ${result.dtoList}" >
                     <th scope="row">
-                        <a th:href="@{/guestbook/read(writingNo = ${dto.writingNo}, page= ${result.page})}">
+                        <a th:href="@{/guestbook/read(writingNo = ${dto.writingNo}, page= ${result.page}, type=${pageRequestDTO.type}, keyword = ${pageRequestDTO.keyword})}">
                             [[${dto.writingNo}]]
                         </a>
                     </th>
